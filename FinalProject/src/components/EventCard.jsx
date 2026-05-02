@@ -2,25 +2,29 @@ import {initialEvents} from "../Event";
 import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
-function EventCard() {
-  const [events] = useState(initialEvents);
-  return (
-    
+import {Link} from 'react-router-dom';
+function EventCard({ event }) {
+  return (    
     <Card style={{ width: '18rem' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '20px' }}></div>
 
       <Card.Body>
-        <p >Sports</p>
-        <Card.Title>Card Title </Card.Title> 
-        <p> Date | Time </p>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <p >{event.category}</p>
+        <Card.Title>{event.title}</Card.Title> 
+        <p> {event.date} | {event.time} </p>
+        <Card.Subtitle className="mb-2 text-muted">{event.location}</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {event.description}
         </Card.Text>
-        <Button onClick={() => {}} variant="outline-primary">Details</Button>
-        <Button onClick={() => {}} variant="outline-danger">Register</Button>
+        <nav className="mb-2">
+          <Button variant="outline-primary">
+          <Link className="text-decoration-none" to={`/Events/${event.id}`}>
+            Details
+          </Link>
+          </Button>
+          <Button variant="outline-danger">Register</Button>
+
+        </nav>
       </Card.Body>
     </Card>
   );

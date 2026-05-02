@@ -10,7 +10,7 @@ import './App.css'
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Events from './pages/Events';
-
+import EventDetails from './pages/EventDetails';
 function App() {
   return (
     <Router>
@@ -20,6 +20,7 @@ function App() {
         <Route path="/Events" element={<Events />} />
         <Route path="/CreateEvent" element={<div>Create Event Page</div>} />
         <Route path="/MyEvents" element={<div>My Events Page</div>} />
+        <Route path="/Events/:id" element={<EventDetails />} />
       </Routes>
       <Footer />
     </Router>
