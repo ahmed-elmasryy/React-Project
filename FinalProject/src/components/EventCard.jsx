@@ -3,7 +3,7 @@ import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom';
-function EventCard({ event }) {
+function EventCard({ event, isRegistered = false, onRegister = null }) {
   return (    
     <Card style={{ width: '18rem' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '20px' }}></div>
@@ -22,7 +22,14 @@ function EventCard({ event }) {
             Details
           </Link>
           </Button>
-          <Button variant="outline-danger">Register</Button>
+          {!isRegistered && (
+            <Button 
+              variant="outline-danger"
+              onClick={() => onRegister && onRegister(event.id)}
+            >
+              Register
+            </Button>
+          )}
 
         </nav>
       </Card.Body>
