@@ -29,6 +29,7 @@ function Events() {
     }
   };
 
+function Events({events}) {
   return (
     <>
     <div style={{justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '20px' }}>
@@ -49,5 +50,5 @@ function Events() {
     </>
   );
 }
-
+}
 export default Events;

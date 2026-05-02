@@ -13,17 +13,19 @@ import Events from './pages/Events';
 import EventDetails from './pages/EventDetails';
 import CreateEvent from './pages/CreateEvent'
 import MyEvents from './pages/MyEvents';
-
+import {initialEvents} from './Event';
 function App() {
+  const [events,setEvents] = useState(initialEvents)
   return (
     <Router>
       <Navbarcomp />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/Events" element={<Events />} />
-        <Route path="/CreateEvent" element={<CreateEvent />} />
+        <Route path="/Events" element={<Events events={events} />} />
+        <Route path="/CreateEvent" element={<CreateEvent events={events} setEvents={setEvents} />} />
         <Route path="/MyEvents" element={<MyEvents />} />
-        <Route path="/Events/:id" element={<EventDetails />} />
+        <Route path="/Events/:id" element={<EventDetails events={events}/>} />
       </Routes>
       <Footer />
     </Router>
