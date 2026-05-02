@@ -5,7 +5,7 @@ import { useState } from 'react';
 import {initialEvents} from "../Event";
 import { Routes, Route } from 'react-router-dom';
 import EventDetails from './EventDetails';
-function Events() {
+function Events({events}) {
   return (
     <>
     <div style={{justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '20px' }}>
@@ -13,7 +13,7 @@ function Events() {
     </div>
     <div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
-            {initialEvents.map((event) => (
+            {events.map((event) => (
                 <EventCard key={event.id} event={event} />
             ))}
         </div>

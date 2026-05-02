@@ -4,9 +4,10 @@ import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom';
-function EventDetails() {
+import Container from 'react-bootstrap/Container';
+function EventDetails({events}) {
   const {id} = useParams();
-  const event = initialEvents.find(e => e.id.toString() === id);
+  const event = events.find(e => e.id.toString() === id);
   if(!event){
     return <Container className="mt-5"><h2>Event not found!</h2></Container>;;
   }
