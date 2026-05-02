@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 function DateTimeValidationForm({ events, setEvents }) {
+  const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
@@ -42,6 +44,7 @@ function DateTimeValidationForm({ events, setEvents }) {
 
       setFormData({ title: '', category: '', date: '', time: '', location: '', seats: '', description: '' });
       setValidated(false);
+      navigate('/events');
       return;
     }
 
@@ -154,7 +157,9 @@ function DateTimeValidationForm({ events, setEvents }) {
         <Form.Control.Feedback type="invalid">Please provide a description.</Form.Control.Feedback>
       </Row>
 
-      <Button type="submit">Submit Form</Button>
+      <Button type="submit">
+        Submit Form
+      </Button>
     </Form>
   );
 }
