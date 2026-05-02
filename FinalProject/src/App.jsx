@@ -7,6 +7,7 @@ import heroImg from './assets/hero.png'
 import Navbarcomp from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/CreateEvent" element={<div>Create Event Page</div>} />
         <Route path="/MyEvents" element={<div>My Events Page</div>} />
       </Routes>
+      <Footer />
     </Router>
   )
 }
