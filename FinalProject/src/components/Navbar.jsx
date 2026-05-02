@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 function NavbarComp() {
   return (
     <Navbar bg="primary">
-      <Container>
-        <Nav className="me-auto">
+      <Container className="justify-content-center">
+        <Nav className="justify-content-center">
         <Nav.Link as={Link} to="/Home" style={{ color: 'white' }}>Home</Nav.Link>
         <Nav.Link as={Link} to="/Events" style={{ color: 'white' }}>Events</Nav.Link>
         <Nav.Link as={Link} to="/CreateEvent" style={{ color: 'white' }}>Create Event</Nav.Link>

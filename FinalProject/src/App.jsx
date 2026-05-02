@@ -8,14 +8,16 @@ import Navbarcomp from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import Events from './pages/Events';
 
 function App() {
   return (
     <Router>
       <Navbarcomp />
       <Routes>
-        <Route path="/Home" element={<div>Home Page</div>} />
-        <Route path="/Events" element={<div>Events Page</div>} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Events" element={<Events />} />
         <Route path="/CreateEvent" element={<div>Create Event Page</div>} />
         <Route path="/MyEvents" element={<div>My Events Page</div>} />
       </Routes>
